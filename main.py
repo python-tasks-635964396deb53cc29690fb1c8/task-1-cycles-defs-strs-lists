@@ -1,6 +1,6 @@
 # Вариант 12
 
-def not_prime_divs_sum(n: int):
+def not_prime_divs_sum(n: int) -> int:
     sm = 0
     logger = []
     for i in range(1, int(n**0.5) + 1):
@@ -15,10 +15,10 @@ def not_prime_divs_sum(n: int):
                     sm += div
                     logger.append(div)
 
-    print(sm, logger)
+    return sm
 
 
-def count_digits(n: int):
+def count_digits(n: int) -> int:
     count = 0
     while n > 0:
         digit = n % 10
@@ -29,7 +29,7 @@ def count_digits(n: int):
     return count
 
 
-def count_numbers_condition(n: int):
+def count_numbers_condition(n: int) -> int:
     count = 0
 
     sum_digits = 0
