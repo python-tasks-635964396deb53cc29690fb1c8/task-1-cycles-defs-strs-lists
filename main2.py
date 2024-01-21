@@ -15,3 +15,17 @@ def useless_symbols(s: str) -> str:
         useless += ru_char if ru_char not in seq else ''
 
     return useless
+
+
+if __name__ == '__main__':
+    tasks = {6: count_digits, 12: useless_symbols}
+    print('Привет! У меня есть задачи:')
+    for task_id, task_executor in tasks.items():
+        print(f'{task_id}. {task_executor.__name__}')
+
+    _id = input('Введи номер задачи: ')
+    arg = input('Введи аргумент к задаче: ')
+
+    r = tasks[int(_id)](arg)
+
+    print(f'Результат выполнения:\n{r}')
