@@ -18,4 +18,12 @@ def not_prime_divs_sum(n: int):
     print(sm, logger)
 
 
-not_prime_divs_sum(102)
+def count_digits(n: int):
+    count = 0
+    while n > 0:
+        digit = n % 10
+        n = n // 10
+        if digit < 3:
+            count += 1
+
+    return count
