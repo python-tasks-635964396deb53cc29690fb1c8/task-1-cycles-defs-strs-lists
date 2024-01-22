@@ -1,8 +1,13 @@
 def count_digits(s: str) -> int:
     count = 0
-    for char in s:
-        if char.isdigit() and int(char) > 5:
-            count += 1
+    seq = ''
+    for i in range(len(s)):
+        if s[i].isdigit():
+            seq += s[i]
+        if ((not s[i].isdigit()) or (i == len(s) - 1)) and len(seq) > 0:
+            if int(seq) > 5:
+                count += 1
+            seq = ''
 
     return count
 
