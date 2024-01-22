@@ -2,7 +2,7 @@ def data_input(s: str = '') -> list[str]:
     data = []
 
     while 1:
-        line = input()
+        line = input(s)
         if not line:
             break
         data.append(line)
@@ -59,4 +59,15 @@ def sort_by_palindrome_count(s: list[str]) -> list[str]:
     return list(map(lambda el: el[0], sorted(data, key=lambda e: e[1])))
 
 
-print(sort_by_palindrome_count(data_input()))
+if __name__ == '__main__':
+    tasks = {3: sort_by_frequency, 6: sort_by_middle, 9: sort_by_ascii_code, 10: sort_by_palindrome_count}
+    print('Привет! У меня есть задачи:')
+    for task_id, task_executor in tasks.items():
+        print(f'{task_id}. {task_executor.__name__}')
+
+    _id = input('Введи номер задачи: ')
+    arg = data_input('Введи аргумент к задаче: ')
+
+    r = tasks[int(_id)](arg)
+
+    print(f'Результат выполнения:\n{r}')
