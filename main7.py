@@ -16,4 +16,10 @@ def reverse_min_max(numbers: list[int]) -> list[int]:
     return numbers[:m[0]+1] + numbers[m[1]-1:m[0]:-1] + numbers[m[1]:]
 
 
-print(reverse_min_max(data_input()))
+def max_max(numbers: list[int]) -> list[int]:
+    mx = max(numbers)
+    numbers.remove(mx)
+    return [mx, max(numbers)]
+
+
+print(max_max(data_input()))
