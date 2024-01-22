@@ -47,4 +47,16 @@ def sort_by_ascii_code(s: list[str]) -> list[str]:
     return list(map(lambda el: el[0], sorted(data, key=lambda e: e[1])))
 
 
-print(sort_by_ascii_code(data_input()))
+def sort_by_palindrome_count(s: list[str]) -> list[str]:
+    data = []
+    for line in s:
+        count = 0
+        for i in range(len(line) - 2):
+            if line[i] == line[i + 2]:
+                count += 1
+        data.append((line, count**2 / count if count != 0 else count))
+
+    return list(map(lambda el: el[0], sorted(data, key=lambda e: e[1])))
+
+
+print(sort_by_palindrome_count(data_input()))
