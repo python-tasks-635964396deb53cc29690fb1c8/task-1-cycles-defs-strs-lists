@@ -32,3 +32,19 @@ def sort_by_middle(s: list[str]) -> list[str]:
 
     # медианного значения чего? Длины? Высоты? Ширины? Какой выборки? Случайной? Выборка на основании чего?
     pass
+
+
+def sort_by_ascii_code(s: list[str]) -> list[str]:
+    data = []
+    for line in s:
+        max_letter = ord(max(line))
+        values = []
+        for i in range(len(line) // 2):
+            values.append(abs(ord(line[i]) - ord(line[len(line) - 1])))
+        values = list(map(lambda e: (max_letter - e)**2, values))
+        data.append((line, (sum(values) / len(values))**0.5))
+
+    return list(map(lambda el: el[0], sorted(data, key=lambda e: e[1])))
+
+
+print(sort_by_ascii_code(data_input()))
