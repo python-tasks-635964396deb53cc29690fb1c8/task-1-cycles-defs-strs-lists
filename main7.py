@@ -22,4 +22,13 @@ def max_max(numbers: list[int]) -> list[int]:
     return [mx, max(numbers)]
 
 
-print(max_max(data_input()))
+def max_odd(numbers: list[int]) -> int:
+    while len(numbers) > 0:
+        mx = max(numbers)
+        if mx % 2 != 0:
+            return mx
+        else:
+            numbers.remove(mx)
+
+
+print(max_odd(data_input()))
