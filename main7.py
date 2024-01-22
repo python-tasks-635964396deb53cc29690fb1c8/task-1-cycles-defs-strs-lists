@@ -31,4 +31,8 @@ def max_odd(numbers: list[int]) -> int:
             numbers.remove(mx)
 
 
-print(max_odd(data_input()))
+def frequency_seq(numbers: list[int]) -> list[int]:
+    return [max(set(numbers), key=numbers.count) for _ in numbers]
+
+
+print(frequency_seq(data_input()))
