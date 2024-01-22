@@ -40,4 +40,15 @@ def list_div_index(numbers: list[int]) -> list[int]:
             numbers.count(numbers[i]) == 1]
 
 
-print(list_div_index(data_input()))
+if __name__ == '__main__':
+    tasks = {12: reverse_min_max, 24: max_max, 36: max_odd, 48: frequency_seq, 60: list_div_index}
+    print('Привет! У меня есть задачи:')
+    for task_id, task_executor in tasks.items():
+        print(f'{task_id}. {task_executor.__name__}')
+
+    _id = input('Введи номер задачи: ')
+    arg = data_input('Введи аргумент к задаче: ')
+
+    r = tasks[int(_id)](arg)
+
+    print(f'Результат выполнения:\n{r}')
