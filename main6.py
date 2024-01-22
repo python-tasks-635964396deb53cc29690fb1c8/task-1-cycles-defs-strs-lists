@@ -25,4 +25,10 @@ def sort_by_frequency(s: list[str]) -> list[str]:
     return list(map(lambda el: el[2], sorted(s_frequency, key=lambda e: e[1] - alphabet[symbol])))
 
 
-print(sort_by_frequency(data_input()))
+def sort_by_middle(s: list[str]) -> list[str]:
+    # 6 В порядке увеличения медианного значения выборки строк (прошлое
+    # медианное значение удаляется из выборки и производится поиск нового
+    # медианного значения).
+
+    # медианного значения чего? Длины? Высоты? Ширины? Какой выборки? Случайной? Выборка на основании чего?
+    pass
